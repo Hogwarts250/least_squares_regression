@@ -1,14 +1,3 @@
-import ast
-
-def literal_input():
-    try: 
-        cartesian_coordinates = ast.literal_eval(input())
-
-    except:
-        literal_input()
-     
-    return cartesian_coordinates
-
 def calc_lsr(cartesian_coordinates):
     n = len(cartesian_coordinates)
 
@@ -25,20 +14,23 @@ def calc_lsr(cartesian_coordinates):
     
     return m, b
 
-def calc_stnd_deviation(slope_intercept, cartesian_coordinates):
+def calc_stnd_deviation(slope, y_intercept, cartesian_coordinates):
     total_deviation = 0
 
     for coordinate in cartesian_coordinates:
 
-        y = slope_intercept[0] * coordinate[0] + slope_intercept[1]
+        y = slope * coordinate[0] + y_intercept
         deviation = abs(coordinate[1] - y)
 
         total_deviation += deviation
     
-    return total_deviation / len(cartesian_coordinates)
+    stnd_deviation = total_deviation / len(cartesian_coordinates)
 
+    return stnd_deviation
+
+"""
 while True:
-    print("Input you coordinates in this format: (x1, y1), (x2, y2) (x3, y3)")
+    print("Input your coordinates in this format: (x1, y1), (x2, y2) (x3, y3)")
     input_coordinates = literal_input()
 
     m, b = calc_lsr(input_coordinates)
@@ -49,3 +41,4 @@ while True:
 
     if input("\nDo you need to find another line of best fit? (y/n) ") == "n":
         break
+"""
