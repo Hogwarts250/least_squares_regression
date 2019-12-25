@@ -27,18 +27,3 @@ def calc_stnd_deviation(slope, y_intercept, cartesian_coordinates):
     stnd_deviation = total_deviation / len(cartesian_coordinates)
 
     return stnd_deviation
-
-"""
-while True:
-    print("Input your coordinates in this format: (x1, y1), (x2, y2) (x3, y3)")
-    input_coordinates = literal_input()
-
-    m, b = calc_lsr(input_coordinates)
-    print("\nslope = " + str(m), "\ny-intercept = " + str(b), "\ny = " + str(m) + "x + " + str(b))
-
-    stnd_deviation = calc_stnd_deviation(calc_lsr(input_coordinates), input_coordinates)
-    print("standard deviation = " + str(stnd_deviation))
-
-    if input("\nDo you need to find another line of best fit? (y/n) ") == "n":
-        break
-"""

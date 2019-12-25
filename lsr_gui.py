@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from tkinter import *
 from tkinter import ttk
 
-from least_squares_regression import literal_input, calc_lsr, calc_stnd_deviation
+from least_squares_regression import calc_lsr, calc_stnd_deviation
 from mpl_lsr import plot_coordinates
 
 def calculate(*args):
